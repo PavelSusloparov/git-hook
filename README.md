@@ -4,9 +4,14 @@ OCD approved.
 
 ### How To
 
+0. Install git-flow
+```bash
+brew install git-flow
+```
+
 1. Initialize GitFlow by example below. 
 ```
-$ git flow init
+$ git-flow init
 
 Which branch should be used for bringing forth production releases?
    - develop
@@ -33,7 +38,7 @@ Ex: feature/PROJ-XXXX-branch-description.
 
 To apply the webhook, use
 ```
-./scripts/install-prepare-commit-msg.sh
+./scripts/install-prepare-commit.sh
 ```
 It installs the webhook to your ~/.git-templates/hooks/ and will be applied for each cloned repository.
 
