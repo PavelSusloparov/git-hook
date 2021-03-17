@@ -3,8 +3,8 @@
  # Magic from the net to get the dir this script lives in
  DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
- cp ${DIR}/../scripts/prepare-commit-msg.sh ${DIR}/../.git/hooks/prepare-commit-msg
- chmod a+x ${DIR}/../.git/hooks/prepare-commit-msg
+ git config --global init.templatedir "~/.git-templates"
 
- #Initialize webhook
- git init
+ mkdir ~/.git-templates/hooks/
+ cp ${DIR}/../scripts/prepare-commit-msg.sh ~/.git-templates/hooks/
+ chmod a+x ~/.git-templates/hooks/prepare-commit-msg
