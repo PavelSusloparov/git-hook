@@ -1,4 +1,4 @@
-## Prepend commit with the JIRA ticket number
+## Prepend commit with the JIRA ticket number and gitmoji
 
 OCD approved.
 

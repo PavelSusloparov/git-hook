@@ -1,10 +1,11 @@
 #!/bin/bash
 
- # Magic from the net to get the dir this script lives in
- DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# Magic from the net to get the dir this script lives in
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
- git config --global init.templatedir "~/.git-templates"
+git clone https://github.com/greg0ire/git_template ~/.git_template || echo "already installed"
+git config --global init.templatedir "~/.git_template/template"
 
- mkdir ~/.git-templates/hooks/
- cp ${DIR}/../scripts/prepare-commit-msg.sh ~/.git-templates/hooks/
- chmod a+x ~/.git-templates/hooks/prepare-commit-msg
+mv ~/.git_template/template/hooks/prepare-commit-msg.sh ~/.git_template/template/hooks/prepare-commit-msg_base.sh
+cp "${DIR}"/../scripts/prepare-commit-msg.sh ~/.git_template/template/hooks/
+chmod a+x ~/.git_template/template/hooks/prepare-commit-msg.sh

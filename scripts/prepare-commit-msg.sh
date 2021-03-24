@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# gitmoji as a commit hook
+exec < /dev/tty
+gitmoji --hook $1 $2
+
 # Include any branches for which you wish to disable this script
 if [ -z "$BRANCHES_TO_SKIP" ]; then
     BRANCHES_TO_SKIP=(master develop)
